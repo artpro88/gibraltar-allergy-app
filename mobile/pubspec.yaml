@@ -1,0 +1,70 @@
+name: gibraltar_allergy_app
+description: Real-time allergy forecasting and air quality app for Gibraltar.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # State Management
+  riverpod: ^2.4.0
+  flutter_riverpod: ^2.4.0
+  
+  # HTTP & API
+  dio: ^5.3.0
+  
+  # Backend
+  supabase_flutter: ^1.10.0
+  
+  # UI & Design
+  google_fonts: ^6.1.0
+  flutter_svg: ^2.0.0
+  
+  # Maps
+  mapbox_flutter: ^1.0.0
+  
+  # Notifications
+  firebase_core: ^2.24.0
+  firebase_messaging: ^14.6.0
+  flutter_local_notifications: ^16.3.0
+  
+  # Date & Time
+  intl: ^0.19.0
+  
+  # Local Storage
+  shared_preferences: ^2.2.0
+  hive: ^2.2.0
+  hive_flutter: ^1.1.0
+  
+  # Utils
+  freezed_annotation: ^2.4.0
+  json_serializable: ^6.7.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  flutter_lints: ^2.0.0
+  build_runner: ^2.4.0
+  freezed: ^2.4.0
+  json_serializable: ^6.7.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/lottie/
+  
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700

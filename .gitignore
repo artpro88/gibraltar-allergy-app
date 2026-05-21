@@ -1,0 +1,76 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub/
+build/
+*.apk
+*.jks
+*.ipa
+*.app
+coverage/
+
+# Android
+android/.gradle/
+android/.idea/
+android/local.properties
+android/build/
+
+# iOS
+ios/Pods/
+ios/Podfile.lock
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Supabase
+.supabase/
+.env.supabase
+
+# Firebase
+google-services.json
+GoogleService-Info.plist
+serviceAccountKey.json
+
+# Credentials & Keys
+*.keystore
+*.jks
+*.p8
+*.p12
+*.key
+secrets/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+.venv/
+__pycache__/
+*.pyc
+dist/
+*.egg-info/
