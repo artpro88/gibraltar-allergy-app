@@ -4,18 +4,37 @@ import dotenv from 'dotenv';
 import WeatherService from './services/weatherService.js';
 import AirQualityService from './services/airQualityService.js';
 
+// Load environment variables
 dotenv.config({ path: '.env.local' });
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+  origin: process.env.CORS_ORIGIN || [
+    'http://localhost:3000',
+    'http://localhost:8080',
+    'http://localhost:19006',
+    'http://localhost:19000',
+    'https://messaging-system-frontend.fly.dev',
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Logging middleware
 app.use((req, res, next) => {
-  console.log(`${new Date().toISOString()} ${req.method} ${req.path}`);
+  const timestamp = new Date().toISOString();
+  const log = `[${timestamp}] ${req.method} ${req.path}`;
+  if (NODE_ENV === 'development') console.log(log);
   next();
 });
 
@@ -142,9 +161,25 @@ app.use((req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`🚀 Gibraltar Allergy App backend running on http://localhost:${PORT}`);
-  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+const server = app.listen(PORT, '0.0.0.0', () => {
+  console.log(`\n🚀 Gibraltar Allergy App Backend`);
+  console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
+  console.log(`📍 URL: http://localhost:${PORT}`);
+  console.log(`🌍 Environment: ${NODE_ENV}`);
+  console.log(`📊 APIs Ready:`);
+  console.log(`   ✅ Weather (Open-Meteo)`);
+  console.log(`   ✅ Air Quality (Open-Meteo)`);
+  console.log(`   ✅ Environmental Report`);
+  console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`);
+});
+
+// Graceful shutdown
+process.on('SIGTERM', () => {
+  console.log('SIGTERM signal received: closing HTTP server');
+  server.close(() => {
+    console.log('HTTP server closed');
+    process.exit(0);
+  });
 });
 
 export default app;
