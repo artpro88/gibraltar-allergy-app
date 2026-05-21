@@ -8,8 +8,12 @@
     "dev": "node --watch src/index.js",
     "start": "node src/index.js",
     "migrate": "supabase migration list",
+    "deploy": "npm run build",
     "test": "jest",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "build": "echo 'Build complete'",
+    "docker:build": "docker build -t gibraltar-allergy-backend:latest .",
+    "docker:run": "docker run -p 3000:3000 gibraltar-allergy-backend:latest"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.38.0",
