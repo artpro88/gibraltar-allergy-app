@@ -1,40 +1,4 @@
 {
   "version": 2,
-  "name": "gibraltar-allergy-app",
-  "buildCommand": "cd backend && npm install",
-  "public": false,
-  "functions": {
-    "backend/src/index.js": {
-      "runtime": "nodejs18.x",
-      "maxDuration": 60
-    }
-  },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "backend/src/index.js"
-    }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        },
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, OPTIONS"
-        }
-      ]
-    }
-  ]
+  "name": "gibraltar-allergy-app"
 }
