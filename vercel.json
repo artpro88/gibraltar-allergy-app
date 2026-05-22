@@ -1,5 +1,16 @@
 {
   "version": 2,
   "name": "gibraltar-allergy-app",
-  "outputDirectory": "public"
+  "builds": [
+    {
+      "src": "api/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/index.js"
+    }
+  ]
 }
