@@ -1,7 +1,17 @@
 {
   "version": 2,
+  "name": "gibraltar-allergy-backend",
   "buildCommand": "npm install",
+  "outputDirectory": ".",
+  "framework": "express",
   "env": {
     "NODE_ENV": "production"
+  },
+  "functions": {
+    "src/index.js": {
+      "runtime": "nodejs18.x",
+      "memory": 1024,
+      "maxDuration": 60
+    }
   }
 }
