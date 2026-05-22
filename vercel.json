@@ -2,14 +2,11 @@
   "version": 2,
   "name": "gibraltar-allergy-app",
   "buildCommand": "cd backend && npm install",
-  "startCommand": "cd backend && npm start",
-  "env": {
-    "NODE_ENV": "production",
-    "PORT": "3000"
-  },
+  "public": false,
   "functions": {
     "backend/src/index.js": {
-      "runtime": "nodejs18.x"
+      "runtime": "nodejs18.x",
+      "maxDuration": 60
     }
   },
   "routes": [
@@ -18,6 +15,9 @@
       "dest": "backend/src/index.js"
     }
   ],
+  "env": {
+    "NODE_ENV": "production"
+  },
   "headers": [
     {
       "source": "/api/(.*)",
