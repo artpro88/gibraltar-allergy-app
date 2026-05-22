@@ -1,4 +1,8 @@
 {
   "version": 2,
-  "name": "gibraltar-allergy-app"
+  "name": "gibraltar-allergy-app",
+  "buildCommand": "npm install --prefix backend",
+  "env": {
+    "NODE_ENV": "production"
+  }
 }
