@@ -74,3 +74,4 @@ __pycache__/
 *.pyc
 dist/
 *.egg-info/
+public/
