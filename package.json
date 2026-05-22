@@ -1,0 +1,31 @@
+{
+  "name": "gibraltar-allergy-app",
+  "version": "1.0.0",
+  "description": "Allergy forecasting and air quality monitoring app for Gibraltar",
+  "type": "module",
+  "main": "api/index.js",
+  "scripts": {
+    "dev": "cd backend && npm run dev",
+    "start": "node api/index.js",
+    "build": "npm install",
+    "test": "cd backend && npm test"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.38.0",
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "firebase-admin": "^12.0.0",
+    "node-cron": "^3.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.52.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
