@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gibraltar Allergy & Air Quality App - API</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .status {
+            background: #f0f9ff;
+            border-left: 4px solid #4facfe;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+        .status-text {
+            color: #0369a1;
+            font-weight: 500;
+        }
+        h2 {
+            color: #333;
+            font-size: 18px;
+            margin: 25px 0 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .endpoint {
+            background: #f8f8f8;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 6px;
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            font-size: 13px;
+            border-left: 3px solid #667eea;
+            color: #333;
+        }
+        .method {
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+        }
+        .test-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        .test-btn:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌍 Gibraltar Allergy App - API Server</h1>
+        <p class="subtitle">Allergy Forecasting & Air Quality Monitoring</p>
+        
+        <div class="status">
+            <span class="status-text">✅ API Server is Running</span>
+        </div>
+
+        <h2>📍 Available Endpoints</h2>
+        
+        <h3 style="color: #666; font-size: 14px; margin-top: 20px; margin-bottom: 10px;">Health Check</h3>
+        <div class="endpoint">
+            <span class="method">GET</span><span>/health</span>
+        </div>
+
+        <h3 style="color: #666; font-size: 14px; margin-top: 20px; margin-bottom: 10px;">Weather Data</h3>
+        <div class="endpoint">
+            <span class="method">GET</span><span>/api/weather/current</span>
+        </div>
+        <div class="endpoint">
+            <span class="method">GET</span><span>/api/weather/forecast</span>
+        </div>
+
+        <h3 style="color: #666; font-size: 14px; margin-top: 20px; margin-bottom: 10px;">Air Quality Data</h3>
+        <div class="endpoint">
+            <span class="method">GET</span><span>/api/air-quality/current</span>
+        </div>
+        <div class="endpoint">
+            <span class="method">GET</span><span>/api/air-quality/forecast</span>
+        </div>
+
+        <h3 style="color: #666; font-size: 14px; margin-top: 20px; margin-bottom: 10px;">Environmental Report</h3>
+        <div class="endpoint">
+            <span class="method">GET</span><span>/api/environmental/report</span>
+        </div>
+
+        <a href="/health" class="test-btn">Test Health Endpoint</a>
+
+        <div class="footer">
+            <p>🚀 Gibraltar Allergy & Air Quality App | API v1.0</p>
+            <p>Real-time weather and air quality data for Gibraltar</p>
+        </div>
+    </div>
+</body>
+</html>

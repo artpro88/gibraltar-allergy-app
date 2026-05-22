@@ -1,7 +1,21 @@
 {
   "version": 2,
   "name": "gibraltar-allergy-app",
+  "buildCommand": "npm ci",
+  "outputDirectory": "public",
   "env": {
     "NODE_ENV": "production"
-  }
+  },
+  "functions": {
+    "api/*.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.js"
+    }
+  ]
 }
