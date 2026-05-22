@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "cd backend && npm run dev",
     "start": "node api/index.js",
-    "build": "npm install",
+    "build": "mkdir -p public && echo '<!DOCTYPE html><html><body>API Server Running</body></html>' > public/index.html",
     "test": "cd backend && npm test"
   },
   "dependencies": {
