@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" width="160" height="48">
+  <rect x="0" y="8" width="32" height="32" rx="8" fill="#ffb020"/>
+  <text x="16" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="18" fill="#fff">O</text>
+  <text x="42" y="30" font-family="Arial, sans-serif" font-weight="600" font-size="18" fill="#1b1f29">Orbital</text>
+</svg>
